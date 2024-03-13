@@ -18,7 +18,25 @@ export default class extends React.Component {
 class DemoPie extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      chartWidth: window.innerWidth * 0.8,
+    }
     props.service.getpiedata()
+  }
+
+  // 更新图表宽度的函数
+  updateDimensions = () => {
+    this.setState({ chartWidth: window.innerWidth * 0.8 });
+  };
+
+  // 在组件挂载时添加resize事件监听器
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+  }
+
+  // 在组件卸载时移除resize事件监听器
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   render() {
@@ -58,21 +76,21 @@ class DemoPie extends React.Component {
           labelLine: {
             show: false
           },
-          data:data
-          // data: [
-          //   { 'value': 26, 'name': '中国大陆' },
-          //   { 'value': 4, 'name': '英国' },
-          //   { 'value': 18, 'name': '美国' },
-          //   { 'value': 4, 'name': '中国香港' },
-          //   { 'value': 2, 'name': '法国' },
-          //   { 'value': 2, 'name': '加拿大' },
-          //   { 'value': 1, 'name': '日本' },
-          //   { 'value': 1, 'name': '中国台湾' }
-          // ]
+          // data:data
+          data: [
+            { 'value': 26, 'name': '中国大陆' },
+            { 'value': 4, 'name': '英国' },
+            { 'value': 18, 'name': '美国' },
+            { 'value': 4, 'name': '中国香港' },
+            { 'value': 2, 'name': '法国' },
+            { 'value': 2, 'name': '加拿大' },
+            { 'value': 1, 'name': '日本' },
+            { 'value': 1, 'name': '中国台湾' }
+          ]
         }
       ]
     };
-    return <ReactECharts option={option} style={{height:400}} />
+    return <ReactECharts option={option} style={{height:400, width: this.state.chartWidth}} />
 
   }
 }
