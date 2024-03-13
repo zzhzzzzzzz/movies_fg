@@ -58,17 +58,17 @@ class DemoPie extends React.Component {
           labelLine: {
             show: false
           },
-          // data:data
-          data: [
-            { 'value': 26, 'name': '中国大陆' },
-            { 'value': 4, 'name': '英国' },
-            { 'value': 18, 'name': '美国' },
-            { 'value': 4, 'name': '中国香港' },
-            { 'value': 2, 'name': '法国' },
-            { 'value': 2, 'name': '加拿大' },
-            { 'value': 1, 'name': '日本' },
-            { 'value': 1, 'name': '中国台湾' }
-          ]
+          data:data
+          // data: [
+          //   { 'value': 26, 'name': '中国大陆' },
+          //   { 'value': 4, 'name': '英国' },
+          //   { 'value': 18, 'name': '美国' },
+          //   { 'value': 4, 'name': '中国香港' },
+          //   { 'value': 2, 'name': '法国' },
+          //   { 'value': 2, 'name': '加拿大' },
+          //   { 'value': 1, 'name': '日本' },
+          //   { 'value': 1, 'name': '中国台湾' }
+          // ]
         }
       ]
     };
