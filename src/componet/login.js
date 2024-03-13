@@ -33,7 +33,7 @@ class _Login extends React.Component{
       return (<div className="login-page">
         <div className="form">
           <form className="login-form">
-            <input type="text" placeholder="用户名" defaultValue='zzh1'/>
+            <input type="text" placeholder="用户名" defaultValue='zzh1' />
             <input type="password" placeholder="密码" defaultValue='abc' />
             <button onClick={this.handleClick.bind(this)}>登录</button>
             <p className="message">未注册?<Link to="/reg">请注册</Link></p>

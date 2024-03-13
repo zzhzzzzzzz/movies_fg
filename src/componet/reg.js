@@ -3,6 +3,7 @@ import { Link,Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import '../css/login.css';
 import {userService as service} from "../service/user";
 import { observer } from "mobx-react";
+import { message } from "antd";
 
 // const service= new UserService();
 export default class Reg extends React.Component{
@@ -17,7 +18,8 @@ class _Reg extends React.Component{
     if (pwd.value==confirmpwd.value){
       return true;
     }else{
-      pwd.focus();
+      confirmpwd.focus();
+      message.warning('两次输入的密码不一致！',3)
       return false;
     }
   }
