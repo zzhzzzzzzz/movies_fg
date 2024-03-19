@@ -23,9 +23,10 @@ import List4 from './componet/list/search_list';
 import List5 from './componet/list/top_list ';
 
 import Pie from './componet/charts/pie'
-import Line from './componet/charts/line'
+import Hist from './componet/charts/hist'
 import Bar from './componet/charts/bar';
 import cloud from './componet/charts/cloud';
+import Line from './componet/charts/line';
 
 import img1 from "./img/spider3.png"
 import img2 from "./img/title.png"
@@ -112,10 +113,11 @@ class App extends React.Component {
                     </span>
                   }
                 >
-                  <Menu.Item key="p1"><Link to="/pie">环形图</Link></Menu.Item>
-                  <Menu.Item key="l1"><Link to="/line">折线图</Link></Menu.Item>
-                  <Menu.Item key="b1"><Link to="/bar">柱状图</Link></Menu.Item>
-                  <Menu.Item key="c1"><Link to="/cloud">词云图</Link></Menu.Item>
+                  <Menu.Item key="p1"><Link to="/pie">主要地区电影发布数量-环形图</Link></Menu.Item>
+                  <Menu.Item key="l1"><Link to="/hist">电影时长分布-直方图</Link></Menu.Item>
+                  <Menu.Item key="b1"><Link to="/bar">电影类型发布数量-柱状图</Link></Menu.Item>
+                  <Menu.Item key="li1"><Link to="/line">年度电影发布数量-折线图</Link></Menu.Item>
+                  <Menu.Item key="c1"><Link to="/cloud">搜索关键词词云-词云图</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="sub2"
@@ -169,8 +171,9 @@ class App extends React.Component {
                   <Route strict path='/reg' component={Reg}></Route>
                   <Route strict path='/profile' component={Profile}></Route>
                   <Route strict path='/pie' component={Pie}></Route>
-                  <Route strict path='/line' component={Line}></Route>
+                  <Route strict path='/hist' component={Hist}></Route>
                   <Route strict path='/bar' component={Bar}></Route>
+                  <Route strict path='/line' component={Line}></Route>
                   <Route strict path='/cloud' component={cloud}></Route>
                   <Route strict path='/week/list' component={List1}></Route>
                   <Route strict path='/box_office/list' component={List2}></Route>

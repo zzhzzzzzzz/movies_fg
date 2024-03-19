@@ -6,7 +6,6 @@ import { chartService as service } from "F:/vscode/毕设/my-app/src/service/cha
 import { inject } from "F:/vscode/毕设/my-app/src/utils/index.js";
 
 
-
 export default class extends React.Component {
   render() {
     return <div><DemoPie /></div>
@@ -18,49 +17,63 @@ export default class extends React.Component {
 class DemoPie extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      chartWidth: window.innerWidth * 0.8,
-    }
     props.service.getpiedata()
   }
 
-  // 更新图表宽度的函数
-  updateDimensions = () => {
-    this.setState({ chartWidth: window.innerWidth * 0.8 });
-  };
-
-  // 在组件挂载时添加resize事件监听器
-  componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions);
-  }
-
-  // 在组件卸载时移除resize事件监听器
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
-  }
 
   render() {
-    console.log(this.props.service.piedata)
-    let data = this.props.service.piedata
+    console.log(this.props.service.piedata, typeof (this.props.service.piedata))
+    const data = this.props.service.piedata
+    console.log(data, typeof (data))
 
     let option = {
+      title:
+      {
+        left: 'center',
+        text: '主要地区高分(≥8.5)电影发布数量占比图'
+      },
       tooltip: {
         trigger: 'item'
       },
       legend: {
-        bottom: '2%',
+        bottom: '1%',
         left: 'center'
       },
+      color: [
+        '#a5a5a5',
+        '#5470c6',
+        '#73c0de',
+        '#ffda88',
+        '#34ee60',
+        '#ff0036',
+        '#ff6e31',
+        '#9A60B4',
+        '#ef6567',
+        '#f9c956',
+        '#3BA272',
+        '#fc8251',
+      ],
       series: [
         {
-          name: '电影发布地区数量占比',
+          name: '高分电影发布数量',
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
           itemStyle: {
             borderRadius: 10,
             borderColor: '#fff',
-            borderWidth: 2
+            borderWidth: 2,
+            // color:function () {
+            //   return (
+            //     'rgb(' +
+            //     [
+            //       Math.round(Math.random() * 250),
+            //       Math.round(Math.random() * 300),
+            //       Math.round(Math.random() * 350)
+            //     ].join(',') +
+            //     ')'
+            //   )
+            // },
           },
           label: {
             show: false,
@@ -76,21 +89,25 @@ class DemoPie extends React.Component {
           labelLine: {
             show: false
           },
-          // data:data
-          data: [
-            { 'value': 26, 'name': '中国大陆' },
-            { 'value': 4, 'name': '英国' },
-            { 'value': 18, 'name': '美国' },
-            { 'value': 4, 'name': '中国香港' },
-            { 'value': 2, 'name': '法国' },
-            { 'value': 2, 'name': '加拿大' },
-            { 'value': 1, 'name': '日本' },
-            { 'value': 1, 'name': '中国台湾' }
-          ]
+          data: data
+          // data: [
+          //   { 'value': 13, 'name': '韩国' },
+          //   { 'value': 23, 'name': '法国' },
+          //   { 'value': 9, 'name': '意大利' },
+          //   { 'value': 172, 'name': '美国' },
+          //   { 'value': 49, 'name': '英国' },
+          //   { 'value': 53, 'name': '中国大陆' },
+          //   { 'value': 35, 'name': '中国香港' },
+          //   { 'value': 12, 'name': '加拿大' },
+          //   { 'value': 37, 'name': '日本' },
+          //   { 'value': 10, 'name': '中国台湾' },
+          //   { 'value': 13, 'name': '德国' },
+          //   { 'value': 38, 'name': '其它地区(发布电影数<5的地区集合)' }
+          // ]
         }
       ]
     };
-    return <ReactECharts option={option} style={{height:400, width: this.state.chartWidth}} />
+    return <ReactECharts option={option} style={{ height: 400 }} />
 
   }
 }

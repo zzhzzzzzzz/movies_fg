@@ -67,6 +67,6 @@ class DemoCloud extends React.Component {
       }]
     };
 
-    return <ReactECharts option={option} />
+    return <ReactECharts option={option} style={{ height: 400 }} />
   }
 }
