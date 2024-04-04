@@ -6,6 +6,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+
+import Label1 from './componet/label/year_label';
+
 import Login from './componet/login';
 import Reg from './componet/reg';
 import Profile from './componet/profile';
@@ -117,7 +120,7 @@ class App extends React.Component {
                   <Menu.Item key="l1"><Link to="/hist">电影时长分布-直方图</Link></Menu.Item>
                   <Menu.Item key="b1"><Link to="/bar">电影类型发布数量-柱状图</Link></Menu.Item>
                   <Menu.Item key="li1"><Link to="/line">年度电影发布数量-折线图</Link></Menu.Item>
-                  <Menu.Item key="c1"><Link to="/cloud">搜索关键词词云-词云图</Link></Menu.Item>
+                  <Menu.Item key="c1"><Link to="/cloud">热门影评词云-词云图</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="sub2"
@@ -142,6 +145,17 @@ class App extends React.Component {
                   <Menu.Item key="13"><Link to="/top/list">豆瓣高分榜</Link></Menu.Item>
                   <Menu.Item key="3"><Link to="/week/list">一周口碑榜</Link></Menu.Item>
                   <Menu.Item key="31"><Link to="/box_office/list">北美票房榜</Link></Menu.Item>
+                </SubMenu>
+                <SubMenu
+                  key="sub5"
+                  title={
+                    <span>
+                      <Icon type="tags" />
+                      电影分类
+                    </span>
+                  }
+                >
+                  <Menu.Item key="5"><Link to="/label">年份</Link></Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="sub4"
@@ -185,6 +199,8 @@ class App extends React.Component {
                   <Route strict path='/movies/top/:id' component={Detail5}></Route>
                   <Route strict path='/movies/search' component={List4}></Route>
                   <Route strict path='/search/:id' component={Detail4}></Route>
+                  <Route strict path='/label' component={Label1}></Route>
+                  <Route strict path='/label/:id' component={Detail4}></Route>
                   <Route component={Default}></Route>
                 </Switch>
               </Content>

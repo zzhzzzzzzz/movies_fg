@@ -18,6 +18,9 @@ class MovieService {
             searchmovie:observable,
             searchmovies:observable,
             isSearch:observable,
+            yearlabels:observable,
+            yearlabels2:observable,
+            yearlabels3:observable,
         })
     }
     weekmovie = {};
@@ -36,6 +39,10 @@ class MovieService {
     searchmovies={}
 
     isSearch=false
+
+    yearlabels={}
+    yearlabels2={}
+    yearlabels3={}
 
     getWeekMovie(id) {
         Axios.get({ "url": "/movies/week/" + id, }).then(
@@ -203,6 +210,69 @@ class MovieService {
             value => {
                 this.searchmovies = value || {}
                 this.isSearch=true
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
+    labellist1(params) {
+        Axios.get(
+            {
+                "url": "/movies/year_label1",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.yearlabels = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
+    labellist2(params) {
+        Axios.get(
+            {
+                "url": "/movies/year_label2",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.yearlabels2 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
+    labellist3(params) {
+        Axios.get(
+            {
+                "url": "/movies/year_label3",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.yearlabels3 = value || {}
                 console.log("成功！", value)
             },
             reason => {
