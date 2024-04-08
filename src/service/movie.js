@@ -15,12 +15,21 @@ class MovieService {
             boxmovies: observable,
             topmovie: observable,
             topmovies: observable,
-            searchmovie:observable,
-            searchmovies:observable,
-            isSearch:observable,
-            yearlabels:observable,
-            yearlabels2:observable,
-            yearlabels3:observable,
+            searchmovie: observable,
+            searchmovies: observable,
+            isSearch: observable,
+            yearlabels: observable,
+            yearlabels2: observable,
+            yearlabels3: observable,
+            allmovies: observable,
+            kindlabels1: observable,
+            kindlabels2: observable,
+            kindlabels3: observable,
+            kindlabels4: observable,
+            kindlabels5: observable,
+            kindlabels6: observable,
+            kindlabels7: observable,
+            kindlabels8: observable,
         })
     }
     weekmovie = {};
@@ -35,14 +44,25 @@ class MovieService {
     topmovie = {};
     topmovies = {};
 
-    searchmovie={}
-    searchmovies={}
+    searchmovie = {}
+    searchmovies = {}
 
-    isSearch=false
+    isSearch = false
 
-    yearlabels={}
-    yearlabels2={}
-    yearlabels3={}
+    yearlabels1 = {}
+    yearlabels2 = {}
+    yearlabels3 = {}
+
+    kindlabels1 = {}
+    kindlabels2 = {}
+    kindlabels3 = {}
+    kindlabels4 = {}
+    kindlabels5 = {}
+    kindlabels6 = {}
+    kindlabels7 = {}
+    kindlabels8 = {}
+
+    allmovies = {}
 
     getWeekMovie(id) {
         Axios.get({ "url": "/movies/week/" + id, }).then(
@@ -187,7 +207,7 @@ class MovieService {
     searchMovie(id) {
         Axios.get(
             {
-                "url": "/movies/search/info/"+id,
+                "url": "/movies/search/info/" + id,
             },
         ).then(
             value => {
@@ -204,12 +224,12 @@ class MovieService {
     searchlist(info) {
         Axios.get(
             {
-                "url": "/movies/search/"+info,
+                "url": "/movies/search/" + info,
             },
         ).then(
             value => {
                 this.searchmovies = value || {}
-                this.isSearch=true
+                this.isSearch = true
                 console.log("成功！", value)
             },
             reason => {
@@ -219,6 +239,28 @@ class MovieService {
             }
         )
     }
+
+    movieslist(params) {
+        Axios.get(
+            {
+                "url": "/movies/all_movies",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.allmovies = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
 
     labellist1(params) {
         Axios.get(
@@ -230,7 +272,7 @@ class MovieService {
             },
         ).then(
             value => {
-                this.yearlabels = value || {}
+                this.yearlabels1 = value || {}
                 console.log("成功！", value)
             },
             reason => {
@@ -273,6 +315,169 @@ class MovieService {
         ).then(
             value => {
                 this.yearlabels3 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
+
+    labellist4(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label1",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels1 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+
+    labellist5(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label2",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels2 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist6(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label3",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels3 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist7(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label4",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels4 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist8(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label5",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels5 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist9(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label6",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels6 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist10(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label7",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels7 = value || {}
+                console.log("成功！", value)
+            },
+            reason => {
+                console.log(reason) //失败处理，给用户友好提示
+                message.warning(reason.msg || "未知错误，请联系管理员！")
+
+            }
+        )
+    }
+    labellist11(params) {
+        Axios.get(
+            {
+                "url": "/movies/kind_label8",
+                "config": {
+                    "params": params
+                }
+            },
+        ).then(
+            value => {
+                this.kindlabels8 = value || {}
                 console.log("成功！", value)
             },
             reason => {

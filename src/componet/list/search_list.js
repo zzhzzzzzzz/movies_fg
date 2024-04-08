@@ -14,7 +14,6 @@ export default class extends React.Component {
     }
     render() {
         const { movies: data = [], pagination = {} } = this.props.service.searchmovies //解构加缺省值，结构不出来返回缺省值
-        const { page: current = 1, size: pageSize = 20, total } = pagination
         return (<List
             header={<div>为您检索到以下影片</div>}
             bordered
@@ -25,17 +24,6 @@ export default class extends React.Component {
                     <Link to={"/search/" + item.id}>{item.rate}</Link>
                 </List.Item>
             )}
-            pagination={{
-                onChange: page => {
-                    console.log(page)
-                    let params = new URLSearchParams(this.props.location.search)
-                    params.set("page", page)
-                    this.props.service.hotlist(params)
-                },
-                current,
-                pageSize,
-                total
-            }}
         />)
     }
 }
