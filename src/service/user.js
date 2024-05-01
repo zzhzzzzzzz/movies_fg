@@ -31,6 +31,7 @@ class UserService {
                 console.log("successful",typeof(value)) //成功处理
                 this.isLogin=true
                 this.uname=username
+                message.info('登录成功！',2)
                 console.log(this.isLogin)
             },
             reason => {
@@ -66,7 +67,9 @@ class UserService {
         axios.get('/api',{url:"/users/logout"}).then(
             value => {
                 this.isLogin=false
+                
                 console.log("退出成功！") //成功处理
+                message.info("退出成功!",3)
             },
             reason => {
                 console.log(reason) //失败处理，给用户友好提示

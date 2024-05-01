@@ -4,8 +4,8 @@ import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import { observer } from "mobx-react";
 import { List, Row, Col } from 'antd';
 
-import { movieService as service } from "F:/vscode/毕设/my-app/src/service/movie.js";
-import { inject } from "F:/vscode/毕设/my-app/src/utils/index.js";
+import { movieService as service } from "../../service/movie.js";
+import { inject } from "../../utils/index.js";
 
 @inject({ service })
 @observer

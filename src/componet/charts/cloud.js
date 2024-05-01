@@ -1,6 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-
 import ReactECharts from 'echarts-for-react';
 import 'echarts-wordcloud';
 
@@ -37,6 +36,12 @@ class DemoCloud extends React.Component {
     { "name": "幽默诙谐", "value": 3.65 }]
 
     let option = {
+      tooltip: {
+        trigger: 'item',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
       series: [{
         type: 'wordCloud',
         //maskImage: maskImage,

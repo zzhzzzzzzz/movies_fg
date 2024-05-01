@@ -9,13 +9,13 @@ import { observer } from "mobx-react";
 import { Menu, Icon, Layout } from 'antd';
 
 
-import { movieService as service } from "F:/vscode/毕设/my-app/src/service/movie.js";
-import { inject } from "F:/vscode/毕设/my-app/src/utils/index.js";
+import { movieService as service } from "../../service/movie.js";
+import { inject } from "../../utils/index.js";
 
-import Label1 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/year1_list';
-import Label2 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/year2_list';
-import Label3 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/year3_list';
-import All from 'F:/vscode/毕设/my-app/src/componet/list/movies_list';
+import Label1 from '../../componet/list/label_list/year1_list';
+import Label2 from '../../componet/list/label_list/year2_list';
+import Label3 from '../../componet/list/label_list/year3_list';
+import All from '../../componet/list/movies_list';
 
 
 

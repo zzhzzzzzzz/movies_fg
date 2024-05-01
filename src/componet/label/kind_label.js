@@ -9,18 +9,18 @@ import { observer } from "mobx-react";
 import { Menu, Icon, Layout } from 'antd';
 
 
-import { movieService as service } from "F:/vscode/毕设/my-app/src/service/movie.js";
-import { inject } from "F:/vscode/毕设/my-app/src/utils/index.js";
+import { movieService as service } from "../../service/movie.js";
+import { inject } from "../../utils/index.js";
 
-import Label1 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind1_list';
-import Label2 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind2_list';
-import Label3 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind3_list';
-import Label4 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind4_list';
-import Label5 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind5_list';
-import Label6 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind6_list';
-import Label7 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind7_list';
-import Label8 from 'F:/vscode/毕设/my-app/src/componet/list/label_list/kind8_list';
-import All from 'F:/vscode/毕设/my-app/src/componet/list/movies_list';
+import Label1 from '../../componet/list/label_list/kind1_list';
+import Label2 from '../../componet/list/label_list/kind2_list';
+import Label3 from '../../componet/list/label_list/kind3_list';
+import Label4 from '../../componet/list/label_list/kind4_list';
+import Label5 from '../../componet/list/label_list/kind5_list';
+import Label6 from '../../componet/list/label_list/kind6_list';
+import Label7 from '../../componet/list/label_list/kind7_list';
+import Label8 from '../../componet/list/label_list/kind8_list';
+import All from '../../componet/list/movies_list';
 
 
 

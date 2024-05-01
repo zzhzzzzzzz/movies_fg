@@ -1,8 +1,8 @@
 import { observer } from "mobx-react";
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
-import { chartService as service } from "F:/vscode/毕设/my-app/src/service/chart.js";
-import { inject } from "F:/vscode/毕设/my-app/src/utils/index.js";
+import { chartService as service } from "../../service/chart.js";
+import { inject } from "../../utils/index.js";
 
 
 export default class Bar extends React.Component {
